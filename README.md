@@ -1,85 +1,68 @@
-# ⏱️ Self-Hosted 7-Segment Clock Webapp
+# 7-Segment Web App
 
-A responsive, browser-based interface for controlling four Engineezy 7-segment display modules in HH:MM format using an ESP32. Includes real-time clock sync and visually accurate SVG digit rendering.
-
----
-
-### 💡 Why This Exists
-
-This project was built to provide a hands-on, real-time way to control 3D-printed 7-segment displays powered by servo motors. It uses an ESP32 as the driver and offers a web interface for both manual control and time-based display — fully customizable and scalable.
+A modern, browser-based simulator and visualization tool for 4-digit 7-segment displays. This app features interactive modules for clock, timer, stopwatch, dice rolling, temperature display, and animated patterns—all rendered with accurate SVG graphics.
 
 ---
 
-### 🤖 Project Attribution
+## ✨ Features
 
-All logic, display rendering, and interface interactions were designed with help from [ChatGPT](https://openai.com/chatgpt) by OpenAI.
-
----
-
-## 📦 Features
-
-- Real-time clock display in HH:MM format
-- Works with 4 Engineezy 7-segment display moduleshttps://github.com/junderscore69/self-web-7segment_webapp_esp32/blob/main/README.md
-- Fully self-hosted on an ESP32
-- Digit rendering matches actual 3D-printed segments
-- Scales across all screen sizes
-- Optional baseplate visualization for physical alignment
-- Manual digit override support (dev mode)
+- **Real-time Clock**: Displays the current time in HH:MM format, with selectable 12hr/24hr modes and timezone support.
+- **Timer**: Set a countdown timer (up to 99:59), with start, pause, stop, and reset controls. Includes a wave animation when the timer finishes.
+- **Stopwatch**: Count up from zero, with pause, stop, and reset controls (up to 99:59).
+- **Dice Simulator**: Simulate rolling two dice (d2–d99 each), with results shown on the display.
+- **Temperature**: Enter a location to fetch and display the current temperature (°F or °C) using Open-Meteo APIs.
+- **Animated Patterns**: Select from wave, count up, or random patterns for fun display effects.
+- **Responsive UI**: Scales beautifully across devices, with visually accurate SVG digit rendering and a baseplate background for alignment.
 
 ---
 
-## 🚀 Setup
+## 🚀 Getting Started
 
-Get started with just a few steps:
+### 1️⃣ Open the App
 
-### 1️⃣ Clone the Repository
+Simply open `index.html` (or any of the provided HTML files) in your web browser. No installation or server required—everything runs locally in your browser.
 
-```sh
-git clone https://github.com/yourusername/self-web-7segment_webapp_esp32.git
-cd self-web-7segment_webapp_esp32
-```
+### 2️⃣ Explore the Modules
 
-### 2️⃣ Upload to ESP32
+- **Clock**: Default view. Choose 12hr/24hr and timezone. The display updates every 2 seconds.
+- **Timer**: Set minutes and seconds, then start. Pause, stop, or reset as needed. When finished, a wave animation plays.
+- **Stopwatch**: Start counting up. Pause, stop, or reset at any time.
+- **Dice Simulator**: Select dice types (d2–d99) for left and right, then roll. Results show as two digits each.
+- **Temperature**: Enter a city or location, click search, and see the current temperature. Switch between °F and °C.
+- **Animated Patterns**: Pick a pattern to animate the display.
 
-Use the Arduino IDE or PlatformIO to upload the server code to your ESP32. It hosts the static web UI and handles servo control via I2C.
+Switch between modules by clicking their cards. The active module is highlighted.
 
-### 3️⃣ Open the Web Interface
+---
 
-Once the ESP32 is running and connected to Wi-Fi, visit its IP address in your browser to access the UI.
+## 🖥️ Project Structure
+
+- `index.html` (and copies): Main web app with all logic and UI.
+- `7segdrawing_complete.svg`: SVG for accurate 7-segment digit rendering.
+- `Clock baseplate.svg`: SVG background for display alignment.
+
+---
+
+## ⚙️ Requirements
+
+- Any modern web browser (Chrome, Firefox, Edge, Safari, etc.)
+- No server, microcontroller, or special hardware required
 
 ---
 
 ## 📋 How to Use
 
-1. Power up the ESP32 connected to your 7-segment display modules
-2. Access the web interface from any device on the same network
-3. The digits will sync with current time automatically
-4. Customize segment positions or override manually (dev mode)
-
----
-
-## ⚙️ Hardware Requirements
-
-- ESP32 microcontroller
-- PCA9685 16-channel PWM driver
-- 4× Engineezy 7-segment servo display modules
-- Power supply for servos
-- Wi-Fi network
-
----
-
-## 📁 Project Files
-
-- `/web/`: HTML, CSS, and JavaScript frontend
-- `/firmware/`: Arduino/ESP32 code to drive the display
-- `7segdrawing_complete.svg`: Custom segment SVG for accurate rendering
-- `Clock baseplate.svg`: Background visualization for module alignment
-- `README.md`: You're reading it!
+1. Open the HTML file in your browser.
+2. Click a module card to activate it.
+3. Use the controls in each module to interact with the display.
+4. The 4-digit SVG display updates in real time based on your actions.
 
 ---
 
 ## 📄 License
 
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+This project is licensed under the MIT License.
 
 ---
+
+*Originally inspired by physical 7-segment display projects. Now a full-featured browser-based simulator and visualization tool.* 
